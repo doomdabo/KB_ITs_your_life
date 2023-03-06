@@ -15,6 +15,9 @@ public class ExamArray {
 		System.out.println("arr3's length is " + arr3.length);
 		System.out.println("arr3[0].length is" + arr3[0].length);
 		
+		for(int is : arr2) {
+			System.out.println(is);
+		}
 		
 		
 	}
