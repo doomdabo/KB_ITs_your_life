@@ -13,7 +13,8 @@ public class ExamStudent {
 		p.getAge();
 		//p.getJeongong은 불가능하다. 
 		Person[] pa = new Person[5];
-		
+		pa[0]=st1;
+		pa[1]=e1;
 	}
 
 }
