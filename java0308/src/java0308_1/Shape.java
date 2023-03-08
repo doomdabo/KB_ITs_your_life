@@ -1,4 +1,4 @@
-package java0308;
+package java0308_1;
 
 /** 도형 공통시작좌표 정의 */
 public class Shape {

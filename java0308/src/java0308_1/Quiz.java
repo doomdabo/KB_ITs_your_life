@@ -1,4 +1,4 @@
-package java0308;
+package java0308_1;
 
 class Employee{
 	void work() {
