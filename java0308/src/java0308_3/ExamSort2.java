@@ -1,6 +1,8 @@
 package java0308_3;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class ExamSort2 {
 
@@ -10,13 +12,16 @@ public class ExamSort2 {
 		// 2. Comparator 구현체 생성
 		ArrayList<Person> pa = new ArrayList<>();
 		pa.add(new Person("홍", 30));
-		pa.add(new Person("김", 32));
+		pa.add(new Person("김", 38));
 		pa.add(new Person("박", 35));
+
+		Collections.sort(pa);
+		System.out.println(pa);
 	}
 
 }
 
-class Person implements Comparable<Person>{
+class Person implements Comparable<Person> {
 
 	private String name;
 	private int age;
@@ -35,7 +40,6 @@ class Person implements Comparable<Person>{
 		return age;
 	}
 
-
 	@Override
 	public String toString() {
 		return "name=" + name + ", age=" + age;
@@ -43,9 +47,11 @@ class Person implements Comparable<Person>{
 
 	@Override
 	public int compareTo(Person o) {
-	
+		// 오름차순 작성 공식: this.변수 - 파라미터.변수
 		return this.age - o.getAge();
+		// 내림차순 작성 공식: 파라미터.변수 - this.변수
+
 	}
 
-
 }
+
