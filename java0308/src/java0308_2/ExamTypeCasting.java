@@ -10,6 +10,13 @@ public class ExamTypeCasting {
 		char c = '가';
 		int i = c;//int 32bit char 16bit이라 묵시적 형변환
 		//boolean은 형변환ㄴ
+		String s1 = "350";
+		int diff = s1.charAt(0)-'0';
+		System.out.println(diff);
+		diff*=10;
+		diff+=(s1.charAt(1)-'0');
+		diff*=10;
+		diff+=(s1.charAt(2)-'0');
 		
 	}
 }
