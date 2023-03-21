@@ -5,15 +5,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class B1008_A나누기B {
+public class B1152_단어의개수 {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		double a = Integer.parseInt(st.nextToken());	
-		double b = Integer.parseInt(st.nextToken());	
-		System.out.println(a/b);
+		int ans = 0;
+		while(st.hasMoreTokens()) {
+			String temp = st.nextToken();
+			ans++;
+		}
+		System.out.println(ans);
+		
 	}
 
 }
