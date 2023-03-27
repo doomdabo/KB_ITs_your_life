@@ -2,9 +2,16 @@ package java_oop_0324;
 
 import java.util.ArrayList;
 
+import java_oop_0324.manage.MyShapeManager;
+import java_oop_0324.manage.ShapeNotFoundException;
+import java_oop_0324.vo.MyCircle;
+import java_oop_0324.vo.MyLine;
+import java_oop_0324.vo.MyRect;
+import java_oop_0324.vo.MyShape;
+
 public class Exam그림판매니저 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ShapeNotFoundException {
 		// MyShapeManager: 도형 객체를 저장,검색,수정,삭제,리스트,갯수정보제공
 		//등록
 		MyShapeManager msm = new MyShapeManager();
@@ -25,14 +32,22 @@ public class Exam그림판매니저 {
 
 		//저장된 전체 객체의 정보를 출력
 		msm.printAll();
-		MyShape fbp = msm.findByPosition(3, 5);
-		if(fbp == null) System.out.println("없음");
-		else System.out.println("있음");
+		try {
+			MyShape m = msm.findByPosition(3, 4);
+			System.out.println("도형있음: "+m.toString());
+		} catch(ShapeNotFoundException e){
+			System.out.println("도형검색실패: "+e.getMessage());
+		}
+		
+		/*if(m == null) System.out.println("없음");
+		else System.out.println("있음");*/
+		
 		//도형 여러개인 경우 출력 방식 
 		ArrayList<MyShape> fbp2 = msm.findByPosition2(3, 5);
 		if(fbp2.size() == 0 ) System.out.println("없음");
 		else System.out.println("있음");
 
+		msm.drawAll();
 	}
 
 }

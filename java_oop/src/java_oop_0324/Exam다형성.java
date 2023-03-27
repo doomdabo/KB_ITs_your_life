@@ -1,8 +1,8 @@
-package java0324;
+package java_oop_0324;
 
-import java0324.vo.MyLine;
-import java0324.vo.MyRect;
-import java0324.vo.MyShape;
+import java_oop_0324.vo.MyLine;
+import java_oop_0324.vo.MyRect;
+import java_oop_0324.vo.MyShape;
 
 public class Exam다형성 {
 	public static void main(String[] args) {

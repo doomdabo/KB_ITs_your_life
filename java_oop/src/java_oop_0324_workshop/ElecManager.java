@@ -2,7 +2,7 @@ package java_oop_0324_workshop;
 
 import java.util.ArrayList;
 
-import java_oop_0324.MyShape;
+import java_oop_0324.vo.MyShape;
 
 
 public class ElecManager {

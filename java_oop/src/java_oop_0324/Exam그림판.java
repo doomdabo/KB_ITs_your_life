@@ -1,5 +1,10 @@
 package java_oop_0324;
 
+import java_oop_0324.vo.MyCircle;
+import java_oop_0324.vo.MyLine;
+import java_oop_0324.vo.MyRect;
+import java_oop_0324.vo.MyShape;
+
 public class Exam그림판 {
 
 	public static void main(String[] args) {
@@ -10,7 +15,7 @@ public class Exam그림판 {
 	    원(MyCircle): x1,y1,radius
 		공통 변수를 부모 클래스로 정의: Shape
 		*/
-		MyShape ms1 = new MyShape(3,5);
+		//MyShape ms1 = new MyShape(3,5);
 		MyLine ml1 = new MyLine(3,3,5,5);
 		MyRect mp1 = new MyRect(3,5,5,15);
 		MyCircle mc1 = new MyCircle(3,3,5);
