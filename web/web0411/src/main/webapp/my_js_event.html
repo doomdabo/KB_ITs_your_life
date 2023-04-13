@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>my_js2.html</title>
+      <script type="text/javascript">
+         a=100 //전역변수
+         var b= 200 //지역변수 (함수내 선언인 경우)
+         let c=300 //블록변수 (블록내에서만 사용 가능)
+         console.log(a)
+         console.log(b)
+         console.log(c)
+      </script>
+      <script type="text/javascript">
+      function gugudan(dan) {
+         var mydan= dan
+         for ( i = 0; i <=9 ; i++) {
+            console.log(dan*i)
+         }
+      }
+      gugudan(3) //호출
+      console.log(mydan)
+      
+      function hoi() {
+         console.log(num)
+         var num =100
+      }
+      hoi() //undefined 뜸
+      
+      var my_plus =function(a,b) {
+         return a+b
+      }
+      console.log(my_plus)
+      console.log(console)
+      
+      </script>
+   </head>
+   <body>
+   
+   </body>
+</html>

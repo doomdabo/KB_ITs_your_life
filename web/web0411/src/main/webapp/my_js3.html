@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>my_js3_event.html</title>
+<script type="text/javascript">
+    function changeBg(color){
+        var result = document.querySelector("#result")
+        result.style.background=color
+    }
+</script>
+</head>
+<body>
+
+    <h1>이벤트</h1>
+    <!-- 이벤트 핸들러가 false를 반환하면 요소기본동작이 취소된다. -->
+    <a onmouseout="changeBg('white')" onmouseover="changeBg('green');" href="#">Green</a>
+    <a onmouseout="changeBg('white')" onmouseover="changeBg('orange'); " href="#">Orange</a>
+    <a onmouseout="changeBg('white')" onmouseover="changeBg('purple'); " href="#">Purple</a>
+
+    <button onclick="changeBg('yellow')">OK</button>
+    <button>Cancel</button>
+
+    <div id="result" style="width:300px; height: 300px;"></div>
+
+</body>
+</html>
+
+

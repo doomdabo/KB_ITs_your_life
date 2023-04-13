@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <!-- timerid = window.setTimeout("코드"/함수, 지연시간(밀리초))-->
+    <!-- window.clearTimeout(timerid) : 지연시간 이전에 실행시 취소-->
+    <!-- timerid = window.setInterval("코드"/함수, 반복시간(밀리초)) -->
+    <!-- window.clearInterval(timerid) : 반복시간 이전에 실행시 취소-->
+	<div id = "result"></div>
+	<script type="text/javascript">
+	var num =0;
+	function show_num(){
+		document.querySelector("#result").innerHTML =num++;
+	}
+		
+/* 	var tid = setInterval("alert(300)",3000)//3초 후 한번 실행
+	clearTimeout(tid)//타이머취소 */
+	var tid = setInterval("show_num()",1000)
+	</script>
+</body>
+</html>

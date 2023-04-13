@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>my_js5_event.html</title>
+</head>
+<body>
+
+    <button id="ok">OK</button>
+    <button id="cancel">Cancel</button>
+    <div id="result"></div>
+
+<script type="text/javascript">
+	var count = 0
+    function ok_click(event){
+        var r = document.querySelector("#result")
+        var num = this.getAttribute("data-num")
+        num = parseInt(num)//문자를 숫자로 변환
+        count+=num
+        r.innerHTML = this.innerHTML + count
+        //this.setAttribute("data-num",num)
+        //r.innerHTML = event.target.innerHTML
+    }
+    var buttons = document.querySelectorAll("button")
+    //alert( buttons.length ) //노드리스트
+    for(let i=0; i<buttons.length; i++){
+        console.log( buttons[i].tagName )
+        console.log( buttons[i].getAttribute("id"))
+        buttons[i].onclick = ok_click
+    }
+
+/*     function ok_click(){
+        var r = document.querySelector("#result")
+        r.innerHTML = "<img src='images/tangerines.jpg'>"
+    }
+    var ok = document.querySelector("#ok")
+    ok.onclick = ok_click ; */
+
+</script>
+</body>
+</html>

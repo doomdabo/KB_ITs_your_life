@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = [ 1, 2, 3 ]
+	var arr2 = new Array(1, 3, 5);
+	console.log("길이는 " + arr.length);
+
+	function make_lotto() { //1~45숫자 6개
+		var arr = []
+		for (let i = 0; i < 6; i++) {
+			var r = Math.random() * 4
+			r=Math.floor(r)//소수이하 버림
+			arr.push(r)
+			console.log(r)
+		}
+	}
+	//숫자 중복 배제 방법
+	function make_lotto2(){
+		var nums = [] 
+		for(let i = 1; i <= 45; i++){
+			nums.push(i)
+		}
+		var arr = []
+		//nums 길이 내에서 임의의 순번 삭제, 저장
+		for(let i=0;i<6;i++){
+			var r = Math.random() *nums.length
+			r=Math.floor(r)
+			arr.push(nums.splice(r,1))
+		}
+	}
+	make_lotto()
+	make_lotto2()
+</script>
+</head>
+<body>
+
+</body>
+</html>

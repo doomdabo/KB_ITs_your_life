@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>my_js6.html</title>
+   </head>
+   <body>
+      <button onclick="show_img()" id ="ok">OK</button>
+      <button id ="cancel">Cancel</button>
+      <div id = "result"></div>
+      <script type="text/javascript">
+      function show_img(){
+    	  var r = document.querySelector("#result")
+    	   r.innerHTML+=("<img src='image/tangerines.jpg'>")
+      }
+ /*      document.querySelector("#ok").onclick =function(){
+         var r = document.querySelector("#result")
+         r.innerHTML=("<img src='images/tangerines.jpg'>")
+          */
+      
+      </script>
+   </body>
+</html>

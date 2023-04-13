@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+#wrapper {
+	width: 540px;
+	margin: 10px auto;
+}
+
+#buttons>button {
+	width: 50px;
+	height: 50px;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.4.js"
+	integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+	crossorigin="anonymous"></script>
+<script type="text/javascript">
+	var x = Math.random() * 10+1 ;//1.0~10.99999
+	x = Math.floor(x)//소수이하버림
+	var y = Math.random() * 10+1 ;//1.0~10.99999
+	y = Math.floor(y) //소수이하버림
+	console.log("x:"+x,"y:"+ y)
+
+    function check_num(){
+        var num = this.innerHTML //선택한 버튼의 숫자
+        num = parseInt(num) //문자를 숫자로 변환
+    	//사용자가 누른 좌표 값을 dx, dy라고 하자.
+        var dx, dy
+        if(num%10==0){
+        	dx = parseInt(num/10)
+        	dy =10
+        }
+        else{
+        	dx = parseInt(num/10)
+        	dy = num%10
+        }
+    	console.log("dx:"+dx,"dy:"+ dy)
+
+    	var dist = Math.sqrt(Math.abs((x-dx)*(x-dx))+Math.abs((y-dy)*(y-dy)))
+        console.log(dist)
+
+    	dist = Math.round(dist)
+        console.log(dist)
+		$(this).html(dist)
+        
+        //누른 버튼은 비활성화 disabled=true
+        //this.disabled = true;
+        $(this).attr("disabled", true)
+        
+        if(dist == 0){ //정답일 경우 추가적인 작업 한다.
+            $("#buttons>button").attr("disabled", true)
+
+            $("#result").html("<br>게임이 종료 되었습니다.");
+        }
+        $("#result").html( num + " : " + dist )
+
+    }
+	$(function() {
+		//버튼 100개 생성, 추가
+		var buttons = $("#buttons")
+		for (let i = 1; i <= 100; i++) {
+			buttons.append("<button>" + i + "</button>")
+		}
+		//버튼 100개에 클릭 이벤트 등록
+		$("#buttons>button").click(check_num)
+
+	})
+</script>
+
+
+</head>
+<body>
+	<div id="wrapper">
+		<h1>금광찾기 게임 만들기</h1>
+		<p>
+			사용자는 숫자맞추기처럼 10*10 버튼중 하나를 누른다. 눌린 버튼위에 금광까지의 직선거리(피타고라스의정리)의 반올림한
+			정수값을 표시한다. <br> 표시형태: [직선거리] 눌린버튼은 비활성화 시킨다. 직선거리가 0이면 금광을 찾은것이고
+			게임은 종료한다.
+		</p>
+		<div id="result"></div>
+		<div id="buttons"></div>
+	</div>
+</body>
+</html>

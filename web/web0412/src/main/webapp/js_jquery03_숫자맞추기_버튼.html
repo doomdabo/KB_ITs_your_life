@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>숫자맞추기 게임 v0.2</title>
+<style>
+    #wrapper { width: 540px; margin: 10px auto; }
+    #buttons > button { width: 50px; height: 50px;  }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    
+    //난수 생성(1~100)
+    var com_num = Math.random()*100+1;//1.0~100.99999
+    com_num = Math.floor(com_num) //소수이하버림
+    
+    function reset_game(){
+        com_num = Math.random()*100+1;//1.0~100.99999
+        com_num = Math.floor(com_num) //소수이하버림
+        //버튼을 초기화 - (1)몽땅지우고 새로등록
+        //$("#buttons>button").remove() //버튼들을 하나씩 삭제
+        /* $("#buttons").empty() //buttons내 모든 노드 삭제
+        var buttons = $("#buttons") //버튼 100개 추가
+        for(let i=1; i<=100; i++){
+            buttons.append("<button>"+i+"</button>")
+        }
+        //버튼 100개에 클릭 이벤트 등록
+        $("#buttons>button").click( check_num ) */
+
+        // (2)전체버튼을 활성화
+        $("#buttons>button").attr("disabled", false)
+    }
+    
+    function check_num(){
+        // this -> 이벤트 소스(이벤트를 발생시킨 태그)
+        /* alert(this.innerHTML) 자바스크립트 코드
+        alert($(this).html()) jquery 코드 */
+        var num = this.innerHTML //선택한 버튼의 숫자
+        num = parseInt(num) //문자를 숫자로 변환
+        var msg = ""
+        if( com_num < num )
+            msg = "낮춰주세요"
+        else if( com_num > num  )
+            msg = "높여주세요"
+        else{
+            msg = "정답입니다"
+        }
+        $("#result").html( num + " : " + msg )
+        //누른 버튼은 비활성화 disabled=true
+        //this.disabled = true;
+        $(this).attr("disabled", true)
+        
+        if(com_num == num){ //정답일 경우 추가적인 작업 한다.
+            reset_game(); //게임초기화
+            $("#result").append("<br>게임이 초기화 되었습니다.");
+        }
+    }
+    
+    $(function(){
+        //버튼 100개 생성, 추가
+        var buttons = $("#buttons")
+        for(let i=1; i<=100; i++){
+            buttons.append("<button>"+i+"</button>")
+        }
+        
+        //버튼 100개에 클릭 이벤트 등록
+        $("#buttons>button").click( check_num )
+
+    })    
+    
+</script>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>숫자맞추기 게임(버튼버전)</h1>
+        <p>1~100사이 컴퓨터가 정한 숫자를 맞춰 보세요~</p>
+        <div id="result"></div>
+        <div id="buttons"></div>
+    </div>
+
+</body>
+</html>
