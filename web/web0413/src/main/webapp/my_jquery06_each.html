@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.4.js"
+	integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+	crossorigin="anonymous"></script>
+<script type="text/javascript">
+	var arr= [10,20,30]
+	$.each(arr,function(index,item){
+		console.log(index+","+item)
+		t+=item
+	})
+	$("#result").html(""+t) //숫자를 문자열로 변환
+</script>
+</head>
+<body>
+	<div id = "result"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+      <script type="text/javascript">
+         serInterval(function(){
+            var val = $("select > option : selected").val()
+            console.log(val)
+         },1000)
+      </script>
+      <script type="text/javascript">
+         $(function () {
+            $("body").mousemove(function (e) {
+               var msg = e.pageX+", "+e.pageY
+               $("#result").html(msg)
+            })
+         })
+      </script>
+      <title>my_jq08.html</title>
+   </head>
+   <body>
+      <div id = "result"></div>
+   </body>
+</html>

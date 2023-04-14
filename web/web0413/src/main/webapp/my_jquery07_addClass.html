@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type = "text/css">
+.red{color:red;}
+.blue_border { border : 1px solid blue; }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.4.js"
+   integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+   crossorigin="anonymous"></script>
+ <script type = "text/javascript">
+ 
+ $(function(){
+   $("button:contains(red)").click(function(){
+      $("ul").addClass("red")
+   })
+   $("button:contains(blue)").click(function(){
+      $("ul").addClass("blue_border")
+   })
+   
+   $("button:contains(red 삭제)").click(function(){
+      $("ul").removeClass("red")
+   })
+      $("button:contains(blue_border 삭제)").click(function(){
+      $("ul").removeClass("blue_border")
+   })
+ })
+
+ </script>
+
+<title>Insert title here</title>
+</head>
+<body>
+   <button>red style</button>
+   <button>blue border</button>
+   <button>red 삭제</button>
+   <button>blue_border 삭제</button>
+   
+   <div>
+   <ul>
+      <li>bag</li>
+      <li>cat</li>
+      <li>dog</li>
+   </ul>
+   
+   
+   </div>
+</body>
+</html>
